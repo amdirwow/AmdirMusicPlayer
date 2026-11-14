@@ -1,0 +1,5 @@
+# User music lives in AddOns/AmdirMusicLibrary, never in this repo.
+Music/
+MusicCache/
+Playlist.lua
+__pycache__/
