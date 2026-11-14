@@ -19,7 +19,7 @@
 3. Ще раз запустіть `UpdatePlaylist.bat`.
 4. **Повністю перезапустіть WoW** (`/reload` нових файлів не бачить).
 
-Linux / Wine: `bash UpdatePlaylist.sh` (потрібен лише Python 3).
+Linux / Wine: `bash scripts/UpdatePlaylist.sh` (потрібен лише Python 3).
 
 ## Команди
 

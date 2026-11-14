@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the Amdir Music Player library for WoW 3.3.5a.
 
-Usage on Linux/Wine: bash UpdatePlaylist.sh [--convert]
+Usage on Linux/Wine: bash scripts/UpdatePlaylist.sh [--convert]
 
 Music lives in a separate folder AddOns/AmdirMusicLibrary (Music/, MusicCache/,
 Playlist.lua and its own .toc), so updating AmdirMusicPlayer through the
@@ -17,7 +17,7 @@ import subprocess
 import sys
 import unicodedata
 
-ADDON_DIR = Path(__file__).resolve().parent
+ADDON_DIR = Path(__file__).resolve().parent.parent
 LIBRARY_NAME = "AmdirMusicLibrary"
 LIBRARY_DIR = ADDON_DIR.parent / LIBRARY_NAME
 MUSIC_DIR = LIBRARY_DIR / "Music"
@@ -334,7 +334,7 @@ def main():
         if temp.exists():
             temp.unlink()
 
-    print("\nAmdir Music Player v1.5.0 (Linux/Wine)")
+    print("\nAmdir Music Player v1.5.1 (Linux/Wine)")
     print(f"Tracks found: {len(files) - len(errors)}")
     print(f"Folders found: {len(folders)}")
     print("Generated safe audio paths in:", CACHE_DIR)

@@ -2,13 +2,14 @@
 # Music lives in AddOns\AmdirMusicLibrary so that updating AmdirMusicPlayer
 # through the Amdir AddOns Downloader never deletes your songs.
 $ErrorActionPreference = 'Stop'
-$addonDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$addonDir = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $libraryName = 'AmdirMusicLibrary'
 $libraryDir = Join-Path (Split-Path -Parent $addonDir) $libraryName
 $musicDir = Join-Path $libraryDir 'Music'
 $cacheDir = Join-Path $libraryDir 'MusicCache'
 $output = Join-Path $libraryDir 'Playlist.lua'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
+Write-Host ('Music library: ' + $libraryDir)
 
 foreach ($dir in @($libraryDir, $musicDir, $cacheDir)) {
     if (-not (Test-Path -LiteralPath $dir -PathType Container)) { New-Item -ItemType Directory -Path $dir | Out-Null }
@@ -79,6 +80,7 @@ function CopyWithoutId3([string]$src, [string]$dest) {
     } finally { $in.Close() }
 }
 
+Write-Host 'Scanning music...'
 # Track length from Windows metadata (System.Media.Duration, 100 ns units).
 $shell = $null
 try { $shell = New-Object -ComObject Shell.Application } catch { }

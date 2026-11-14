@@ -1,4 +1,4 @@
--- Amdir Music Player 1.5.0 — WoW 3.3.5a, Lua 5.1.
+-- Amdir Music Player 1.5.1 — WoW 3.3.5a, Lua 5.1.
 -- Songs come from the separate addon AmdirMusicLibrary (Playlist.lua), created by
 -- UpdatePlaylist.bat / .sh, so addon updates never delete the user's music.
 --
@@ -8,7 +8,7 @@
 -- so Stop briefly toggles Sound_EnableAllSound, cutting every playing sound.
 
 local ADDON_NAME = "AmdirMusicPlayer"
-local VERSION = "1.5.0"
+local VERSION = "1.5.1"
 local tracks = AmdirMusicTracks or {}
 local folders = AmdirMusicFolders or {}
 local db
@@ -306,7 +306,7 @@ end
 
 local function PlayAt(index, fromHistory)
     if not ValidIndex(index) then
-        Chat("Немає треків. Покладіть MP3/OGG в AddOns\\AmdirMusicLibrary\\Music, запустіть UpdatePlaylist.bat (Linux: UpdatePlaylist.sh) у папці AmdirMusicPlayer і перезапустіть WoW.")
+        Chat("Немає треків. Покладіть MP3/OGG в AddOns\\AmdirMusicLibrary\\Music, запустіть UpdatePlaylist.bat (Linux: scripts/UpdatePlaylist.sh) у папці AmdirMusicPlayer і перезапустіть WoW.")
         return
     end
     local song = tracks[index]
@@ -647,7 +647,7 @@ local function CreateWindow()
     emptyText = listPanel:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     emptyText:SetPoint("CENTER", rowArea, "CENTER", 0, 5)
     emptyText:SetWidth(440)
-    emptyText:SetText("У цій папці немає пісень.\n\n1. Запустіть UpdatePlaylist.bat у папці AddOns\\AmdirMusicPlayer\n2. Покладіть MP3/OGG в AddOns\\AmdirMusicLibrary\\Music\n3. Ще раз UpdatePlaylist.bat і повністю перезапустіть WoW\n|cff888888Linux: bash UpdatePlaylist.sh|r")
+    emptyText:SetText("У цій папці немає пісень.\n\n1. Запустіть UpdatePlaylist.bat у папці AddOns\\AmdirMusicPlayer\n2. Покладіть MP3/OGG в AddOns\\AmdirMusicLibrary\\Music\n3. Ще раз UpdatePlaylist.bat і повністю перезапустіть WoW\n|cff888888Linux: bash scripts/UpdatePlaylist.sh|r")
 
     local versionText = window:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     versionText:SetPoint("BOTTOMRIGHT", -22, 18)
