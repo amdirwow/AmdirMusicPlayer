@@ -1,5 +1,5 @@
 *.bat text eol=crlf
-*.ps1 text eol=crlf
+*.js text eol=crlf
 *.lua text eol=lf
 *.toc text eol=lf
 *.py text eol=lf

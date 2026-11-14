@@ -334,7 +334,7 @@ def main():
         if temp.exists():
             temp.unlink()
 
-    print("\nAmdir Music Player v1.5.2 (Linux/Wine)")
+    print("\nAmdir Music Player v1.5.3 (Linux/Wine)")
     print(f"Tracks found: {len(files) - len(errors)}")
     print(f"Folders found: {len(folders)}")
     print("Generated safe audio paths in:", CACHE_DIR)

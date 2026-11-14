@@ -41,16 +41,10 @@ goto end
 
 rem --- 3. Build the playlist ---
 :build
-where powershell.exe >nul 2>nul
-if errorlevel 1 goto no_powershell
 echo Building playlist, please wait...
 echo.
-powershell.exe -NoProfile -NonInteractive -InputFormat None -ExecutionPolicy Bypass -File "%~dp0scripts\UpdatePlaylist.ps1" < nul
+cscript.exe //nologo //E:jscript "%~dp0scripts\UpdatePlaylist.js" "%ADDONS%" < nul
 if errorlevel 1 goto failed
-goto end
-
-:no_powershell
-echo ERROR: PowerShell was not found on this computer.
 goto end
 
 :failed

@@ -1,4 +1,4 @@
--- Amdir Music Player 1.5.2 — WoW 3.3.5a, Lua 5.1.
+-- Amdir Music Player 1.5.3 — WoW 3.3.5a, Lua 5.1.
 -- Songs come from the separate addon AmdirMusicLibrary (Playlist.lua), created by
 -- UpdatePlaylist.bat / .sh, so addon updates never delete the user's music.
 --
@@ -8,7 +8,7 @@
 -- so Stop briefly toggles Sound_EnableAllSound, cutting every playing sound.
 
 local ADDON_NAME = "AmdirMusicPlayer"
-local VERSION = "1.5.2"
+local VERSION = "1.5.3"
 local tracks = AmdirMusicTracks or {}
 local folders = AmdirMusicFolders or {}
 local db
