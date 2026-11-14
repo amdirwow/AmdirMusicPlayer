@@ -2,7 +2,7 @@
 ## Title: Amdir |cff6fd3ffMusic Player|r
 ## Notes: Програвач власної музики (MP3/OGG) для WoW 3.3.5a. Музика - в AddOns\AmdirMusicLibrary.
 ## Author: Amdir
-## Version: 1.5.1
+## Version: 1.5.2
 ## SavedVariables: AmdirMusicPlayerDB
 ## OptionalDeps: AmdirMusicLibrary
 Player.lua
